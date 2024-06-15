@@ -3,7 +3,7 @@
     <body>
         <script>
             (function(){
-                const display = document.createElement('span'), btn = document.createElement('btn');
+                const display = document.createElement('span'), btn = document.createElement('button');
                 display.setAttribute('id','disp');
                 document.body.appendChild(display);
                 btn.setAttribute('id','cBtn');
@@ -11,7 +11,7 @@
 
                 function getE() {
                     for (var c of document.body.children) {
-                        if (c.tagName.toLowerCase() != 'button')
+                        if (c.tagName.toLowerCase() != 'button' && c.tagName.toLowerCase() != 'script')
                             return c;
                     }
 
