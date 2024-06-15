@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <body>
+        <script>
+            (function(){
+                const display = document.createElement('span'), btn = document.createElement('btn');
+                display.setAttribute('id','disp');
+                document.body.appendChild(display);
+                btn.setAttribute('id','cBtn');
+                document.body.appendChild(btn);
+
+                function getE() {
+                    for (var c of document.body.children) {
+                        if (c.tagName.toLowerCase() != 'button')
+                            return c;
+                    }
+
+                    return null;
+                }
+                var clicks = 0;
+
+                btn.addEventListener('click', function() {
+                    clicks++;
+                })
+
+                setInterval(function() {
+                    var e = getE();
+
+                    if (e == null)
+                        window.location.reload();
+
+                    e.innerHTML = 'Clicks: ' + clicks;
+
+                    if (document.getElementById('cBtn') == null)
+                        window.location.reload();
+                    if (document.getElementById('disp') == null)
+                        window.location.reload();
+                })
+            })();
+        </script>
+    </body>
+</html>
