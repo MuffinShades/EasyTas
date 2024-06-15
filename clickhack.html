@@ -23,7 +23,7 @@
                     clicks++;
                 })
 
-                setInterval(function() {
+                function t() {
                     var e = getE();
 
                     if (e == null)
@@ -35,8 +35,13 @@
                         window.location.reload();
                     if (document.getElementById('disp') == null)
                         window.location.reload();
-                })
+
+                    window.requestAnimationFrame(t);
+                }
             })();
+            window.clearInterval = function() {
+                console.log('Nice Try ;)');
+            }
         </script>
     </body>
 </html>
