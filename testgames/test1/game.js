@@ -4,8 +4,8 @@ const ctx = can.getContext('2d');
 var p ={
     x: 0,
     y: 0,
-    w: 32,
-    h: 32,
+    w: 24,
+    h: 24,
     vx: 0,
     vy: 0,
     mu: false,
@@ -15,13 +15,12 @@ var p ={
     speed: 5,
     color: 'red',
     update: function() {
+        const sDelta = 1;
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x,this.y,this.w,this.h);
 
         this.x += this.vx;
         this.y += this.vy;
-
-        const sDelta = 1/20;
 
         if (this.mr && this.vx < this.speed)
             this.vx += this.speed * sDelta;
@@ -32,17 +31,19 @@ var p ={
         if (this.mu && this.vy > -this.speed)
             this.vy -= this.speed * sDelta;
 
-        if (!this.mr && !this.ml && Math.floor(this.vx*100)/100 > 0)
+        if (!this.mr && !this.ml && Math.abs(Math.floor(this.vx*10)/10) > 0)
             this.vx += -Math.sign(this.vx) * sDelta;
-        else
+        else if (!this.mr && !this.ml)
             this.vx = 0;
 
-        if (!this.mu && !this.md && Math.floor(this.vy*100)/100 > 0)
+        if (!this.mu && !this.md && Math.abs(Math.floor(this.vy*10)/10) > 0)
             this.vy += -Math.sign(this.vy) * sDelta;
-        else
+        else if (!this.mu && !this.md)
             this.vy = 0;
     }
 }
+
+can.style = 'position: absolute; top: 0; left: 0;';
 
 setInterval(function() {
     can.width = document.documentElement.clientWidth;
