@@ -1,0 +1,21 @@
+.input-table tr {
+    margin: 0;
+    width: 100%;
+    height: 20px;
+    border: none;
+    background: #eee;
+    display: flex;
+}
+
+.input-table tr td {
+    width: 15px;
+    height: 15px;
+    margin: 2.5px;
+    display: block;
+    background: #f00;
+}
+
+.input-table {
+    border: 1px solid #000;
+    width: 25%;
+}
