@@ -6,32 +6,39 @@
         <link rel='stylesheet' type="text/css" href='page.css'>
     </head>
     <body>
-        <div>
+        <!--<div>
             <button onclick='EasyTas.reset()'>Reset</button>
             <button onclick='EasyTas.step()'>Step</button>
+        </div>-->
+        <div class='page-grid-contain'>
+            <div class='input-container'>
+                <table class='input-table'>
+                    <tbody>
+                        <tr mode='1'>
+                            <td>Md</td>
+                        </tr>
+                        <tr>
+    
+                        </tr>
+                        <tr>
+    
+                        </tr>
+                        <tr>
+    
+                        </tr>
+                        <tr>
+    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='properties-container'>
+                <span>properties here...</span>
+            </div>
+            <div class='g-can-container'>
+                <canvas id='g-can'></canvas>
+            </div>
         </div>
-        <div class='input-container'>
-            <table class='input-table'>
-                <tbody>
-                    <tr mode='1'>
-                        <td>Md</td>
-                    </tr>
-                    <tr>
-
-                    </tr>
-                    <tr>
-
-                    </tr>
-                    <tr>
-
-                    </tr>
-                    <tr>
-
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <canvas id='g-can'></canvas>
         <script src='lib/easytas.js'></script>
     </body>
 </html>

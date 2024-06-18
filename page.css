@@ -1,3 +1,8 @@
+* {
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .input-table tr {
     margin: 0;
     width: 100%;
@@ -16,6 +21,34 @@
 }
 
 .input-table {
+    width: 100%;
+}
+
+.page-grid-contain {
+    display: grid;
+    grid-gap: 0px;
+    /*grid-template-columns: auto auto auto auto;*/
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 200px 200px 200px 200px;
+    height: 100%;
+}
+
+.page-grid-contain div {
     border: 1px solid #000;
-    width: 25%;
+}
+
+.input-container {
+    resize: vertical;
+    overflow: auto;
+    min-height: 1r;
+    max-width: 100%;
+    grid-area: 1 / 1 / span 2 / span 1;
+}
+
+.properties-container {
+    grid-area: 3 / 1 / span 2 / span 1;
+}
+
+.g-can-container {
+    grid-area: 1 / 2 / span 3 / span 4;
 }
