@@ -3,6 +3,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+    --resize-thumb: 3px;
+}
+
+html, body {
+    height: 100%;
+}
+
 .input-table tr {
     margin: 0;
     width: 100%;
@@ -24,10 +32,9 @@
     width: 100%;
 }
 
-.page-grid-contain {
+/*.page-grid-contain {
     display: grid;
     grid-gap: 0px;
-    /*grid-template-columns: auto auto auto auto;*/
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-columns: 200px 200px 200px 200px;
     height: 100%;
@@ -51,4 +58,57 @@
 
 .g-can-container {
     grid-area: 1 / 2 / span 3 / span 4;
+}*/
+
+.resize-vertical-bar {
+    cursor: row-resize;
+    width: 100%;
+    height: var(--resize-thumb);
+    background: rgba(0,0,0,0);
+}
+.resize-horizontal-bar {
+    width: var(--resize-thumb);
+    height: 100%;
+    background: rgba(0,0,0,0);
+    cursor: col-resize;
+}
+
+.resize-vertical-bar[bar-pos="top"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.resize-vertical-bar[bar-pos="bottom"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.resize-horizontal-bar[bar-pos="left"]  {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.resize-horizontal-bar[bar-pos="right"]  {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.g-can-container {
+    height: auto;
+    width: auto;
+    flex-grow: 1;
+}
+
+.page-grid-contain {
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+*[type='pcontainer'] {
+    border: 1px solid #0f0;
 }
