@@ -9,16 +9,13 @@
     }
     var globalTe = null;
     const t = document.querySelectorAll('[resizeable]'), types = ['horizontal', 'vertical'], subTypes = [["left","right"], ["top", "bottom"]];
-    console.log(t);
+    
     for (const e of t) {
-        console.log(e);
         var rInfo = e.getAttribute('resize-info');
-        console.log(rInfo)
         if (rInfo == null)
             continue;
 
         var prInfo = rInfo.split('-');
-        console.log(prInfo)
 
         if (prInfo.length != 2)
             continue;
@@ -36,10 +33,9 @@
                 subType = parseInt(i);
                 break;
             }
-        console.log(type, subType, typeof type, typeof subType);
+        
         if (typeof type != 'number' || typeof subType != 'number')
             continue;
-        console.log('Cheese')
         //create le drag element based on type
         const de = document.createElement('div');
         //<div class='resize-horizontal-bar' bar-pos='right'></div>
@@ -48,12 +44,10 @@
         de.setAttribute('bar-pos', subTypes[type][subType]);
         de.setAttribute('ninf', ((type & 3) << 2) | (subType & 3));
 
-        console.log(de);
-
         //add event listeneres
         de.addEventListener('mousedown', function(_) {
             globalTe = this;
-            console.log('!');
+            
             const te = this.parentElement;
             var inf = parseInt(this.getAttribute('ninf'));
             if (inf == NaN) return;
@@ -93,17 +87,18 @@
                         te.width = e.pageX - box.left;
                         te.style.width = (e.pageX - box.left) + 'px'
                     } else {
+                        //TODO maybe add this later, idk dom stuff like this is a pain in the ass
                         //te.x = e.pageX;
                         //te.width = anchor - e.pageX;
                     }
                     break;
                 }
                 case 1: { //vertical
-                    console.log('!a');
                     if (pInf.subType) {
                         te.height = e.pageY - box.top;
                         te.style.height = (e.pageY - box.top) + 'px';
                     } else {
+                        //TODO maybe add this later, idk dom stuff like this is a pain in the ass
                         //console.log('!');
                         //te.height = e.pageY - box.top;
                         //te.style.height = (e.pageY - box.top) + 'px';
