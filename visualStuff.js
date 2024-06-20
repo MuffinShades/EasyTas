@@ -5,7 +5,7 @@ function reloadTable() {
     var i=0,m;
     
     for (const e of targets) {
-        m = ++i % 2;
+        m=++i%2;
         e.style.backgroundColor = tColors[m];
     }
 }

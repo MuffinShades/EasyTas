@@ -45,7 +45,7 @@ var p ={
 
 can.style = 'position: absolute; top: 0; left: 0;';
 
-setInterval(function() {
+EasyTas.setInterval(function() {
     can.width = document.documentElement.clientWidth;
     can.height = document.documentElement.clientHeight;
     p.update();
