@@ -11,8 +11,8 @@
             <button onclick='EasyTas.step()'>Step</button>
         </div>-->
         <div class='page-grid-contain'>
-            <div class='side-span-contain' type='pcontainer'>
-                <div class='input-container' type='pcontainer'>
+            <div class='side-span-contain' type='pcontainer' resize-info='horizontal-right' resizeable>
+                <div class='input-container' type='pcontainer' resize-info='vertical-bottom' resizeable>
                     <table class='input-table'>
                         <tbody>
                             <tr mode='1'>
@@ -36,12 +36,13 @@
                 <div class='properties-container' type='pcontainer'>
                     <span>properties here...</span>
                 </div>
-                <div class='resize-horizontal-bar' bar-pos='right'>a</div>
+                <!--<div class='resize-horizontal-bar' bar-pos='right'></div>-->
             </div>
             <div class='g-can-container' type='pcontainer'>
                 <canvas id='g-can'></canvas>
             </div>
         </div>
         <script src='lib/easytas.js'></script>
+        <script src='resize.js'></script>
     </body>
 </html>

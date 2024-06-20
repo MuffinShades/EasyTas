@@ -112,3 +112,17 @@ html, body {
 *[type='pcontainer'] {
     border: 1px solid #0f0;
 }
+
+.side-span-contain {
+    position: relative;
+    overflow: hidden;
+}
+
+.properties-container {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.input-container {
+    position: relative;
+}
