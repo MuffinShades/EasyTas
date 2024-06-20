@@ -125,4 +125,5 @@ html, body {
 
 .input-container {
     position: relative;
+    overflow: hidden;
 }
