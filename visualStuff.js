@@ -11,3 +11,43 @@ function reloadTable() {
 }
 
 reloadTable();
+
+var playBtn = document.getElementById('play-btn');
+
+playBtn.addEventListener('click', function() {
+    const mode = this.getAttribute('mode');
+
+    if (typeof mode != 'string')
+        mode = 0;
+    else
+        try {
+            mode = parseInt(mode);
+        } catch {
+            mode = 0;
+        }
+
+    switch (mode) {
+        case 0: {
+            EasyTas.play();
+            break;
+        }
+        case 1: {
+            EasyTas.pause();
+            break;
+        }
+    }
+
+    //switch mode
+    mode = !mode;
+    this.setAttribute('mode', mode);
+
+    switch (mode) {
+        case 0: {
+            this.innerText = 'Play';
+            break;
+        }
+        case 1: {
+            this.innerText = 'Pause';
+        }
+    }
+})

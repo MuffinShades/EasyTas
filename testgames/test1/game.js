@@ -1,6 +1,8 @@
 const can = document.getElementById('c');
 const ctx = can.getContext('2d');
 
+EasyTas.setGlobalCanvas(can);
+
 var p ={
     x: 0,
     y: 0,
@@ -51,7 +53,7 @@ EasyTas.setInterval(function() {
     p.update();
 }, 1000/60);
 
-window.addEventListener('keydown', function(e) {
+EasyTas.addEventListener('keydown', function(e) {
     switch (e.key.toLowerCase()) {
         case 'w': {
             p.mu = true;
@@ -72,7 +74,7 @@ window.addEventListener('keydown', function(e) {
     }
 })
 
-window.addEventListener('keyup', function(e) {
+EasyTas.addEventListener('keyup', function(e) {
     switch (e.key.toLowerCase()) {
         case 'w': {
             p.mu = false;
